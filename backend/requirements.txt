@@ -1,2 +1,10 @@
 flask==3.1.0
 flask-sqlalchemy==3.1.1
+flask-bcrypt==1.0.1
+python-dotenv==1.0.1
+# itsdangerous ships transitively with Flask but is used directly in auth.py;
+# pin it explicitly so the dependency is auditable and version-stable.
+itsdangerous>=2.1.2
+# Rate-limiting extension used to protect the login endpoint from brute-force
+# and credential-stuffing attacks (OWASP A07).
+flask-limiter>=3.0.0
